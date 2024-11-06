@@ -20,7 +20,6 @@ from datetime import date, datetime
 import pytz
 from sample_info import tempDict
 
-
 class Bot(Client):
 
     def __init__(self):
