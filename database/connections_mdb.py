@@ -34,7 +34,7 @@ async def add_connection(group_id, user_id):
         'active_group' : group_id,
     }
 
-    if mycol.count_documents( {"_id": user_id} ) == 0:
+        if mycol.count_documents( {"_id": user_id} ) == 0 and mycol2.count_documents( {"_id": user_id} ) == 0:
         try:
             mycol.insert_one(data)
             return True
