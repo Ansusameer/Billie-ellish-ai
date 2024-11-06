@@ -36,8 +36,12 @@ async def add_connection(group_id, user_id):
 
         if mycol.count_documents( {"_id": user_id} ) == 0 and mycol2.count_documents( {"_id": user_id} ) == 0:
         try:
-            mycol.insert_one(data)
-            return True
+                        if tempDict['indexDB'] == DATABASE_URI:
+                mycol.insert_one(data)
+                return True
+            else:
+                mycol2.insert_one(data)
+                return True
         except:
             logger.exception('Some error occurred!', exc_info=True)
 
