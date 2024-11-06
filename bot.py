@@ -18,8 +18,8 @@ from pyrogram import types
 from Script import script 
 from datetime import date, datetime 
 import pytz
-from aiohttp import web
-from plugins import web_server
+from sample_info import tempDict
+
 
 class Bot(Client):
 
